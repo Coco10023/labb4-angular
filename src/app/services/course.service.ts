@@ -8,11 +8,11 @@ import { Course } from '../models/course';
 })
 export class CourseService {
 
-  private url = 'https://webbutveckling.miun.se/files/ramschema.json';
+  private url = 'https://webbutveckling.miun.se/files/ramschema.json'; // Pekar på JSON filen
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {}  // låter Angular använda HttpClient.
 
-  getCourses(): Observable<Course[]> {
+  getCourses(): Observable<Course[]> { // Hämtar alla kurser från JSON-filen
     return this.http.get<Course[]>(this.url);
   }
 }
